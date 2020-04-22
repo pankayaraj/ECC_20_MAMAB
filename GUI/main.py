@@ -592,9 +592,9 @@ class Graph_Screen(Screen):
 
             fig4, ax4 = plt.subplots()
             for p in range(len(P)):
-                ax4.plot(self.c_rw[p][0])
+                ax4.plot((1/Agent_Number)*np.sum(self.c_rw[p][:, self.so_ban], axis=0))
                 ax4.legend(leg,fontsize=8)
-            self.Graphs[3] = FigureCanvasKivyAgg(plt.gcf(), size_hint= (1,1), pos_hint = {"top":1})
+            self.Graphs[2] = FigureCanvasKivyAgg(plt.gcf(), size_hint= (1,1), pos_hint = {"top":1})
             plt.close(fig4)
 
 
@@ -602,7 +602,7 @@ class Graph_Screen(Screen):
             for p in range(len(P)):
                 ax3.plot(self.s_rw[p][0])
                 ax3.legend(leg,fontsize=8)
-            self.Graphs[2] = FigureCanvasKivyAgg(plt.gcf(), size_hint= (1,1), pos_hint = {"top":1})
+            self.Graphs[3] = FigureCanvasKivyAgg(plt.gcf(), size_hint= (1,1), pos_hint = {"top":1})
             plt.close(fig3)
 
 
@@ -615,7 +615,7 @@ class Graph_Screen(Screen):
 
             fig6, ax6 = plt.subplots()
             for p in range(len(P)):
-                ax6.plot(self.c_rg[p][0])
+                ax6.plot((1/Agent_Number)*np.sum(self.c_rg[p][:, self.so_ban], axis=0))
                 ax6.legend(leg,fontsize=8)
             self.Graphs[5] = FigureCanvasKivyAgg(plt.gcf(), size_hint= (1,1), pos_hint = {"top":1})
             plt.close(fig6)
